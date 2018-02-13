@@ -12,8 +12,8 @@ git status
 git diff		    工作区和缓存区的比较
 git diff --cached	    缓存区和分支的比较
 
-git remote add origin <address>
-git push -u origin master
+git remote add origin <address>  关联远程库，名字叫origin
+git push -u origin master	 将当前分支master推送到远程库origin
 git clone <address>
 
 git branch
