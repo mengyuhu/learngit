@@ -48,10 +48,14 @@ git tag -a <tag_name> -m "comment" <commit_id>     指定标签并指定说明�
 git tag -s <tag_name> -m "comment" <commit_id>	   通过私钥签名一个标签，采用PGP签名，若没有GnuPG则报错
 git show <tag_name>				   查看标签信息
 
+git tag -d <tag_name>				   删除标签
+git push <branch_name> --tags			   一次性推送全部未推送的本地标签
+git push <branch_name> <tag_name>		   推送指定标签
+注意：删除一个远程标签，需要先删除本地的标签，再用git push origin :refs/tags/<tagname>同步删除
+
 多人协作的工作模式通常是这样：
 1.首先，可以试图用git push origin branch-name推送自己的修改；
 2.如果推送失败，则因为远程分支比你的本地更新，需要先用git pull试图合并；
 3.如果合并有冲突，则解决冲突，并在本地提交；
 4.没有冲突或者解决掉冲突后，再用git push origin branch-name推送就能成功！
-
 注意：如果git pull提示“no tracking information”，则说明本地分支和远程分支的链接关系没有创建，用命令git branch --set-upstream branch-name origin/branch-name。
