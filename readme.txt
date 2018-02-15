@@ -21,6 +21,7 @@ git branch <branch_name>
 git checkout <branch_name>
 git checkout -b <branch_name>
 git branch -d <branch_name>  			   删除指定分支
+git branch -D <branch_name>			   强制删除指定分支
 
 git merge <branch_name>      			   提交指定分支成果到当前分支
 git merge --no-ff -m "comment" <branch_name>       禁用Fast forward方式合并分支
