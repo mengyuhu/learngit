@@ -41,6 +41,13 @@ git stash apply <stash_name>			   恢复现场，但存档还在
 git stash drop <stash_name>			   删除存档
 git stash pop <stash_name>			   恢复现场，同时删除存档
 
+git tag <tag_name>				   打一个新的标签(在最新提交的commit上)
+git tag <tag_name> <commit_id>			   给指定的commit上打标签
+git tag						   查看所有的标签
+git tag -a <tag_name> -m "comment" <commit_id>     指定标签并指定说明文字
+git tag -s <tag_name> -m "comment" <commit_id>	   通过私钥签名一个标签，采用PGP签名，若没有GnuPG则报错
+git show <tag_name>				   查看标签信息
+
 多人协作的工作模式通常是这样：
 1.首先，可以试图用git push origin branch-name推送自己的修改；
 2.如果推送失败，则因为远程分支比你的本地更新，需要先用git pull试图合并；
